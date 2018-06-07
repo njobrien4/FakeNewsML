@@ -1,4 +1,4 @@
-#To run train/evaluate:
+### To run train/evaluate: ###
   (this should all be done in openmind container with tensorflow)
   a) download and unzip GoogleNews-vectors-negative300.bin.gz ( I got from: https://github.com/mmihaltz/word2vec-GoogleNews-vectors)
   b) change directories in sh file (i.e.: launch_no_word_end.sh) to match the full path of train.py, positive data, and negative data files
@@ -19,8 +19,8 @@ mkdir log
   b) run "python websites.py" and "python websites_fake.py"
  
  
-#(A) To get the fake and real trigrams and then (B) remove those words included in both and then separate by part of speech
- 
+### (A) To get the fake and real trigrams and then (B) remove those words included in both and then separate by part of speech ###
+  
  to do (A)
   a) change "cur_dir = " in real_fake_pos.py to be whatever the trigram directory was that you used (i.e. "log/no_word_no_end/")
   b) run " python real_fake_pos.py"
@@ -29,10 +29,15 @@ mkdir log
   a) run "python get_unique_true_false.py" (as log as most_fake.txt, etc are in current directory)
   
  
-#Weights histogram is made by calling:
+### Weights histogram is made by calling: ###
 python
 import interpret
 interpret.make_weight_histogram(weights)
 
-#Other info from 
+### Other info from  ###
 interpret.get_info(3, "all_wi_ai.npy", "all_top_n_neurons.txt", "best_trigrams_pickle.txt") 
+
+
+**** TO RUN OTHER EXPERIMENTS, i.e. words or less cleaning look for sh files with those names (i.e. "trump")... 
+
+P.S. noem means no emphasis (removed italics) and enchant is the English Word Only tool
