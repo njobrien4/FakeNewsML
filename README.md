@@ -1,12 +1,19 @@
 ### To run train/evaluate: ###
   (this should all be done in openmind container with tensorflow)
   a) download and unzip GoogleNews-vectors-negative300.bin.gz ( I got from: https://github.com/mmihaltz/word2vec-GoogleNews-vectors)
+ 
   b) change directories in sh file (i.e.: launch_no_word_end.sh) to match the full path of train.py, positive data, and negative data files
+  
   c) add modules and make log directory: 
+  
 module add openmind/cuda/8.0
+
 module add openmind/cudnn/8.0-5.1
+
 module load openmind/singularity/2.5-dev
+
 mkdir log
+  
   d) run "sbatch launch_no_word_end.sh" (Or whichever model you want to train)
   e) view the log to see where the model was saved (should be a number such as "1528206991")
   f) In the sh eval file (i.e. vi no_word_no_end_eval.sh) change directory to runs/YOUR_NUMBER/checkpoints/ (i.e. runs/1528206991/checkpoints/)
